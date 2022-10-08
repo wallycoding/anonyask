@@ -14,7 +14,6 @@ interface PrivateRouteProps {
 const PrivateRoute = (props: PrivateRouteProps) => {
   const { user, userDB, authLoading: loading } = useAuth();
 
-  console.log("Private Route!");
   if (user ? !userDB : loading) return <LoadScreen />;
   if (props.reverse ? user : !user) 
   return <Navigate to={props.redirect} />;
