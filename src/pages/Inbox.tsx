@@ -64,13 +64,6 @@ const Inbox = () => {
     }
   }, [user]);
 
-  useEffect(() => {
-    if (page > totalPages) {
-      setPage(1);
-      setQueries({ page: "1" });
-    }
-  }, [totalPages, page]);
-
   const changePage = (newPage: number) => () => {
     if (newPage <= totalPages && newPage > 0) {
       setPage(newPage);
